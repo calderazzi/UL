@@ -12,9 +12,10 @@ body {
 }
 #video {
   position: fixed;
+  top: 0px;
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: 110%;
   min-width: 100%;
   min-height: 100%;
   z-index: -100;
@@ -184,7 +185,7 @@ h2 {
 
 h3 a {
   text-decoration: none;
-  color: rgb(204, 0, 255);
+  color: rgb(255, 255, 255);
 }
 
 h4 a {
@@ -254,7 +255,6 @@ h4 a {
   margin-top: 100px;
   margin-bottom: 500px;
   color: white;
- 
 }
 
 .cont {
@@ -317,7 +317,7 @@ h4 a {
 
 @media only screen and (max-width: 950px) {
   #video {
-    width: 165%;
+    width: 130%;
   }
   .divisor{
     margin-top: -130px;
@@ -373,7 +373,7 @@ h4 a {
 
 @media only screen and (max-width: 720px) {
   #video {
-    width: 173%;
+    width: 120%;
   }
   .container {
     margin-left: 245px;
@@ -387,7 +387,7 @@ h4 a {
 }
 @media only screen and (max-width: 680px) {
   #video {
-    width: 184%;
+    width: 100%;
   }
   .divisor {
     margin-top: -120px;
@@ -466,7 +466,7 @@ h4 a {
 
 @media only screen and (max-width: 630px) {
   #video {
-    width: 210%;
+    width: 90%;
   }
   .argentina {
     top: 700px;
@@ -485,7 +485,7 @@ h4 a {
 }
 @media only screen and (max-width: 560px) {
   #video {
-    width: 245%;
+    width: 80%;
   }
   .milei2023 {
     font-size: 20px;
@@ -499,7 +499,7 @@ h4 a {
 
 @media only screen and (max-width: 475px) {
   #video {
-    width: 320%;
+    width: 50%;
   }
   .divisor {
     display: none;
@@ -511,7 +511,7 @@ h4 a {
 
 @media only screen and (max-width: 370px) {
   #video {
-    width: 410%;
+    width: 30%;
   }
   .rugido {
     font-size: 15px;
