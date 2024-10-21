@@ -14,7 +14,7 @@
   <style>
       #signature-pad {
           background-color: white;
-          border: 2px solid rgb(133, 7, 183);
+          border: 2px solid rgb(133, 7, 183);          
           width: 100%;
           max-width: 300px;
           height: 200px;
@@ -30,7 +30,7 @@
   <video autoplay muted loop id="video" ><source src="img/bandera.mp4" type="video/mp4"></video>
   <h1>Unión Libertaria Catamarca</h1>
   <div class="contenedor">
-    <a class="menu" href="#"><img src="img/union libertaria.ico" alt="menu"></a>
+    <a class="menu" href="#"><img src="img/union libertaria.jpg" alt="menu"></a>
     <ul class="desplegable">
       <li><a class="opcion" href="index.html">Inicio</a></li>
       <li><a class="opcion" href="quienesSomos.html">Quienes Somos</a></li>
@@ -50,53 +50,53 @@
   </div>
   <button id="clear">Borrar</button>
   <button id="save">Guardar Imagen</button>
-
+  
   <script>
       const canvas = document.getElementById('canvas');
       const ctx = canvas.getContext('2d');
       let drawing = false;
-
+  
       function resizeCanvas() {
           canvas.width = canvas.clientWidth;
           canvas.height = canvas.clientHeight;
           ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
-
+  
       window.addEventListener('resize', resizeCanvas);
       resizeCanvas();
-
+  
       function startDrawing(e) {
           drawing = true;
           draw(e);
       }
-
+  
       function stopDrawing() {
           drawing = false;
           ctx.beginPath();
       }
-
+  
       function draw(e) {
           if (!drawing) return;
-
+  
           const rect = canvas.getBoundingClientRect();
           const x = (e.clientX || e.touches[0].clientX) - rect.left;
           const y = (e.clientY || e.touches[0].clientY) - rect.top;
-
+  
           ctx.lineWidth = 2;
           ctx.lineCap = 'round';
           ctx.strokeStyle = '#000';
-
+  
           ctx.lineTo(x, y);
           ctx.stroke();
           ctx.beginPath();
           ctx.moveTo(x, y);
       }
-
+  
       // Eventos para mouse
       canvas.addEventListener('mousedown', startDrawing);
       canvas.addEventListener('mouseup', stopDrawing);
       canvas.addEventListener('mousemove', draw);
-
+  
       // Eventos para toque
       canvas.addEventListener('touchstart', (e) => {
           e.preventDefault();
@@ -107,16 +107,16 @@
           e.preventDefault();
           draw(e.touches[0]);
       });
-
+  
       document.getElementById('clear').addEventListener('click', () => {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
       });
-
+  
       document.getElementById('save').addEventListener('click', () => {
-          const dataURL = canvas.toDataURL('image/png');
+          const dataURL = canvas.toDataURL('image/jpeg', 1.0); // Cambia a 'image/jpeg' para JPG
           const link = document.createElement('a');
           link.href = dataURL;
-          link.download = 'firma.png';
+          link.download = 'firma.jpg'; // Cambia la extensión a .jpg
           link.click();
       });
   </script>
